@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Post · Blog</title>
+    <link rel="icon" href="../assets/img/avatar.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+      .post { max-width: 760px; margin: 0 auto; }
+      .post h1 { font-size: 28px; margin-bottom: 8px; }
+      .post .meta { color: var(--muted); margin-bottom: 16px; }
+      .post p { margin: 12px 0; }
+      .post img { margin: 16px 0; border-radius: 8px; border: 1px solid var(--border); }
+      pre { background: var(--card); padding: 12px; border-radius: 8px; border: 1px solid var(--border); overflow: auto; }
+      blockquote { border-left: 3px solid var(--border); margin: 8px 0; padding: 6px 12px; color: var(--muted); }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <img class="avatar" src="../assets/img/avatar.svg" alt="Avatar" width="40" height="40">
+          <div>
+            <h1 class="name" style="font-size:18px;margin:0">Your Name</h1>
+            <p class="tagline" style="margin:0">Blog</p>
+          </div>
+        </div>
+        <nav class="nav">
+          <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+          <ul>
+            <li><a href="../index.html#about">About</a></li>
+            <li><a href="../index.html#research">Research</a></li>
+            <li><a href="../publications.html">Publications</a></li>
+            <li><a href="../awards.html">Awards</a></li>
+            <li><a href="index.html">Blog</a></li>
+            <li><a href="../index.html#news">News</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="container">
+      <article class="section post">
+        <a href="index.html">← Back to blog</a>
+        <h1 id="postTitle">Loading…</h1>
+        <div class="meta">Markdown rendered client-side</div>
+        <div id="postContent">Loading content…</div>
+        <p class="muted">如果本页空白，请使用本地服务器预览（例如 Python: <code>python -m http.server 8000</code> 后打开 http://localhost:8000/blog/post.html?src=posts/sample-post.md）。</p>
+      </article>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="year"></span> Your Name.</p>
+      </div>
+    </footer>
+    <script src="../assets/js/main.js" defer></script>
+    <script src="../assets/js/blog.js" defer></script>
+  </body>
+  </html>
+
+

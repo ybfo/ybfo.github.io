@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blog · PhD Academic Page</title>
+    <link rel="icon" href="../assets/img/avatar.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../assets/css/style.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <img class="avatar" src="../assets/img/avatar.svg" alt="Avatar" width="40" height="40">
+          <div>
+            <h1 class="name" style="font-size:18px;margin:0">Your Name</h1>
+            <p class="tagline" style="margin:0">Blog</p>
+          </div>
+        </div>
+        <nav class="nav">
+          <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+          <ul>
+            <li><a href="../index.html#about">About</a></li>
+            <li><a href="../index.html#research">Research</a></li>
+            <li><a href="../publications.html">Publications</a></li>
+            <li><a href="../awards.html">Awards</a></li>
+            <li><a aria-current="page">Blog</a></li>
+            <li><a href="../index.html#news">News</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="container">
+      <section class="section">
+        <h2>Posts</h2>
+        <ul id="postsList" class="news"></ul>
+        <p class="muted">在本地直接双击打开（file://）时，浏览器可能屏蔽读取 Markdown 文件。建议用本地服务器预览，例如 Python: <code>python -m http.server 8000</code> 后打开 http://localhost:8000/</p>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="year"></span> Your Name.</p>
+      </div>
+    </footer>
+    <script src="../assets/js/main.js" defer></script>
+    <script src="../assets/js/blog.js" defer></script>
+  </body>
+  </html>
+
+

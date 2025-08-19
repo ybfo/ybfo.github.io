@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Publications ·  Academic Page</title>
+    <link rel="icon" href="assets/img/avatar.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <img class="avatar" src="assets/img/avatar.svg" alt="Avatar" width="40" height="40">
+          <div>
+            <h1 class="name" style="font-size:18px;margin:0">Yubo Huang</h1>
+            <p class="tagline" style="margin:0">Publications</p>
+          </div>
+        </div>
+        <nav class="nav">
+          <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+          <ul>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#research">Research</a></li>
+            <li><a aria-current="page">Publications</a></li>
+            <li><a href="awards.html">Awards</a></li>
+            <li><a href="blog/index.html">Blog</a></li>
+            <li><a href="index.html#news">News</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="container">
+      <section class="section">
+        <div class="section-header">
+          <h2>Publications</h2>
+          <div class="controls">
+            <input id="pubSearch" type="search" placeholder="Search title/author/venue" aria-label="Search publications">
+            <select id="pubType">
+              <option value="all">All types</option>
+              <option value="journal">Journal</option>
+              <option value="conference">Conference</option>
+              <option value="preprint">Preprint</option>
+            </select>
+            <select id="pubYear">
+              <option value="all">All years</option>
+            </select>
+          </div>
+        </div>
+        <h3 style="margin-top:10px">Main Authors</h3>
+        <ol id="pubListLead" class="pub-list"></ol>
+        <h3 style="margin-top:20px">Co-Authors</h3>
+        <ol id="pubListOther" class="pub-list"></ol>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="year"></span>2025 Yubo Huang.</p>
+      </div>
+    </footer>
+    <script src="assets/js/main.js" defer></script>
+  </body>
+  </html>
+
+

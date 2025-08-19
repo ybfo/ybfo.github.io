@@ -1,0 +1,17 @@
+{
+  "name": " Academic Page",
+  "short_name": "Academic",
+  "start_url": "/index.html",
+  "display": "minimal-ui",
+  "background_color": "#ffffff",
+  "theme_color": "#0f172a",
+  "icons": [
+    {
+      "src": "assets/img/avatar.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
+
+

@@ -1,0 +1,187 @@
+/*
+  Minimal, responsive academic page styles
+  - System fonts, no external requests
+  - Light/Dark themes with CSS variables
+  - Accessible focus states and reduced motion support
+*/
+
+:root {
+  --bg: #ffffff;
+  --text: #0f172a;
+  --muted: #475569;
+  --accent: #2563eb;
+  --accent-contrast: #ffffff;
+  --border: #e2e8f0;
+  --card: #f8fafc;
+  --shadow: 0 1px 2px rgba(0,0,0,0.05), 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.dark {
+  --bg: #0b1220;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --accent: #60a5fa;
+  --accent-contrast: #0b1220;
+  --border: #1f2937;
+  --card: #101827;
+  --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 2px 8px rgba(0,0,0,0.5);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.65;
+  font-size: 16px;
+}
+
+img { max-width: 100%; display: block; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip-link:focus { left: 16px; top: 8px; width: auto; height: auto; background: var(--accent); color: var(--accent-contrast); padding: 8px 12px; border-radius: 6px; }
+
+.container { max-width: 1000px; margin: 0 auto; padding: 0 16px; }
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(8px);
+  background: color-mix(in oklab, var(--bg), transparent 10%);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; gap: 16px; }
+
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand .name { font-size: 20px; line-height: 1.2; margin: 0 0 2px; }
+.brand .tagline { margin: 0; color: var(--muted); font-size: 14px; }
+.avatar { border-radius: 50%; border: 1px solid var(--border); background: var(--card); }
+
+.nav ul { list-style: none; display: flex; gap: 14px; margin: 0; padding: 0; }
+.nav a { display: inline-block; padding: 6px 8px; border-radius: 6px; color: var(--text); }
+.nav a:hover { background: var(--card); text-decoration: none; }
+
+.theme-toggle { cursor: pointer; border: 1px solid var(--border); background: var(--card); color: var(--text); border-radius: 8px; padding: 6px 10px; box-shadow: var(--shadow); }
+.theme-toggle:hover { filter: brightness(0.98); }
+
+.section { padding: 28px 0; scroll-margin-top: 84px; }
+.section h2 { margin: 0 0 12px; font-size: 22px; }
+
+.about-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 18px; }
+.facts { list-style: none; margin: 0; padding: 0; border: 1px solid var(--border); border-radius: 10px; background: var(--card); box-shadow: var(--shadow); }
+.facts li { padding: 10px 12px; border-bottom: 1px solid var(--border); }
+.facts li:last-child { border-bottom: 0; }
+
+.links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
+.btn { display: inline-block; padding: 8px 12px; border-radius: 8px; background: var(--accent); color: var(--accent-contrast); box-shadow: var(--shadow); text-decoration: none; }
+.btn:hover { filter: brightness(0.95); text-decoration: none; }
+
+.section-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.controls { display: flex; gap: 8px; }
+.controls input[type="search"], .controls select {
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+
+.pub-list { list-style: decimal; padding-left: 20px; margin: 0; }
+.pub-list li { padding: 10px 0; border-bottom: 1px dashed var(--border); }
+.pub-list li:last-child { border-bottom: 0; }
+.pub-title { font-weight: 600; }
+.pub-meta { color: var(--muted); font-size: 14px; margin-top: 2px; }
+.pub-tags { display: inline-flex; gap: 6px; margin-top: 6px; flex-wrap: wrap; }
+.tag { font-size: 12px; border: 1px solid var(--border); background: var(--card); color: var(--muted); padding: 2px 6px; border-radius: 999px; }
+.pub-links { margin-top: 6px; display: inline-flex; gap: 10px; }
+
+.cards { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.cards li { border: 1px solid var(--border); border-radius: 10px; background: var(--card); box-shadow: var(--shadow); padding: 12px; }
+.cards h3 { margin: 0 0 6px; font-size: 16px; }
+.cards .muted { color: var(--muted); font-size: 14px; }
+
+.news { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.news time { color: var(--muted); font-variant-numeric: tabular-nums; }
+
+.contact { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
+
+.site-footer { border-top: 1px solid var(--border); margin-top: 24px; }
+.site-footer .container { padding: 18px 0; color: var(--muted); font-size: 14px; }
+
+@media (max-width: 860px) {
+  .about-grid { grid-template-columns: 1fr; }
+  .cards { grid-template-columns: 1fr; }
+  .header-inner { align-items: flex-start; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+/* Modal for BibTeX */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 1000;
+}
+.modal-backdrop.active { display: flex; }
+.modal {
+  width: min(720px, 100%);
+  max-height: 80vh;
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+}
+.modal-title { font-weight: 600; margin-right: 12px; }
+.modal-actions { display: inline-flex; gap: 8px; }
+.modal-actions .btn { padding: 6px 10px; font-size: 14px; }
+.modal-body {
+  padding: 12px;
+  overflow: auto;
+}
+.modal pre {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+  margin: 0;
+  white-space: pre;
+}
+
+
